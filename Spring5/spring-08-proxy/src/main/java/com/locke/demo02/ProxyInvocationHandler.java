@@ -24,6 +24,7 @@ public class ProxyInvocationHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // 动态代理的本质，就是使用反射机制实现！
         seeHouse();
+        // before: host.rent();
         Object result = method.invoke(rent, args);
         fare();
         return result;

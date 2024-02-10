@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/aop
         https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!--配置数据源：数据源有非常多，可以使用第三方的，也可使使用Spring的-->
+    <!--配置数据源：数据源有非常多，可以使用第三方的，也可使使用 Spring 的-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url"
@@ -33,6 +33,7 @@
     <bean id="userMapper" class="com.locke.mapper.UserMapperImpl">
         <property name="sqlSession" ref="sqlSession"/>
     </bean>
+
 
 
 </beans>

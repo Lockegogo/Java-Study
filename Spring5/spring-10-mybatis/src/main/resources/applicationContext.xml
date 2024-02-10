@@ -9,10 +9,8 @@
 
     <import resource="spring-dao.xml"/>
 
-    <bean id="userMapper" class="com.locke.mapper.UserMapperImpl">
-        <property name="sqlSession" ref="sqlSession"/>
-    </bean>
 
+    <!--使用第二种方式，不需要管理 SqlSessionTemplate-->
     <bean id="userMapper2" class="com.locke.mapper.UserMapperImpl2">
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>

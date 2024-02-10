@@ -1,3 +1,4 @@
+import com.locke.pojo.Cat;
 import com.locke.pojo.People;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +11,9 @@ public class MyTest {
 
         People people = context.getBean("people", People.class);
         people.getDog().shout();
+
+        Cat cat = context.getBean("cat", Cat.class);
+        System.out.println(cat.name);
     }
 
 

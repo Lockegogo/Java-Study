@@ -13,15 +13,15 @@
     <bean id="log" class="com.locke.log.Log"/>
     <bean id="afterLog" class="com.locke.log.AfterLog"/>
 
-    <!--方式一：使用原生 Spring API 接口
-    &lt;!&ndash;配置 aop：需要导入 aop 约束&ndash;&gt;
-    <aop:config>
-        &lt;!&ndash;切入点：expression：表达式，execution：要执行的位置&ndash;&gt;
-        <aop:pointcut id="pointcut" expression="execution(* com.locke.service.UserServiceImpl.*(..))"/>
-        &lt;!&ndash;执行环绕增加&ndash;&gt;
-        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>
-        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
-    </aop:config>-->
+<!--    &lt;!&ndash;方式一：使用原生 Spring API 接口-->
+<!--    &lt;!&ndash;配置 aop：需要导入 aop 约束&ndash;&gt;-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;切入点：expression：表达式，execution：要执行的位置&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* com.locke.service.UserServiceImpl.*(..))"/>-->
+<!--        &lt;!&ndash;执行环绕增加&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+<!--    </aop:config>&ndash;&gt;-->
 
 <!--    &lt;!&ndash;方式二：自定义类&ndash;&gt;-->
 <!--    <bean id="diy" class="com.locke.diy.DiyPointCut"/>-->
