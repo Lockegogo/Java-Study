@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.locke.pojo"/>
+    </typeAliases>
+    <!--每一个 Mapper.xml 都需要在 Mybatis 核心配置文件中注册！-->
+    <mappers>
+        <mapper resource="com/locke/dao/BookMapper.xml"/>
+    </mappers>
+</configuration>

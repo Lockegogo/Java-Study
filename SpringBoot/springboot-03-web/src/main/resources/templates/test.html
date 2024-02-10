@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div>
+            <h1>Test页面</h1>
+            <!--不转义-->
+            <div th:text="${msg}"></div>
+            <!--转义-->
+            <div th:utext="${msg}"></div>
+
+            <hr>
+            <!--遍历数据-->
+            <!--th:each每次遍历都会生成当前这个标签：官网#9-->
+            <h3 th:each="user:${users}" th:text="${user}"></h3>
+            <hr>
+            <!--行内写法：官网#12-->
+            <h3 th:each="user:${users}">[[ ${user} ]]</h3>
+        </div>
+    </body>
+</html>

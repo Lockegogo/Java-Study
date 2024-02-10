@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 绑定一个对应的 Dao/Mapper 接口-->
+<mapper namespace="com.locke.dao.UserMapper">
+    <!--id 就是接口中方法的名字，本来是需要重写的（例如先连接数据库再执行查询），
+    现在只需要绑定，不需要再连接数据库，只用专注于 sql 代码-->
+    <!--resultType 代表返回类型-->
+    <select id="selectUser" resultType="com.locke.pojo.User">
+        select * from user
+    </select>
+</mapper>
