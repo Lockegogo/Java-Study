@@ -8,15 +8,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-<form action="<c:url value="/user"/>" method="post">
-    <label>
-        <input type="text" name="method">
-    </label>
-    <input type="submit">
-</form>
-</body>
+    <head>
+        <title>Title</title>
+    </head>
+    <body>
+        <form action="<c:url value="/user"/>" method="post">
+            <label>
+                <input type="text" name="method">
+            </label>
+            <input type="submit">
+        </form>
+    </body>
 </html>

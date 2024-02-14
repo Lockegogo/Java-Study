@@ -12,15 +12,15 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
-<!--    &lt;!&ndash;配置超时时间&ndash;&gt;-->
-<!--    <session-config>-->
-<!--        <session-timeout>15</session-timeout>-->
-<!--    </session-config>-->
+    <!--配置超时时间-->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 
-<!--    &lt;!&ndash;配置欢迎页面&ndash;&gt;-->
-<!--    <welcome-file-list>-->
-<!--        <welcome-file>index.jsp</welcome-file>-->
-<!--    </welcome-file-list>-->
+    <!--配置欢迎页面-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
 
 </web-app>

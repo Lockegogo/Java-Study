@@ -1,6 +1,6 @@
 # Java-Study
 
-## Mybatis-Study
+## Mybatis
 
 1. [Mybatis 教程](https://www.cnblogs.com/lockegogo/p/18012142)
 
@@ -10,7 +10,7 @@
 
 ## SpringMVC
 
-
+1. [SpringMVC 教程](https://www.cnblogs.com/lockegogo/p/18013103)
 
 ## SpringBoot
 
