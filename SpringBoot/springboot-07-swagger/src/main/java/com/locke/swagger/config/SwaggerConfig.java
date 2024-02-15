@@ -27,7 +27,7 @@ public class SwaggerConfig {
         boolean b = environment.acceptsProfiles(of);
 
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("狂神") // 配置分组
+                .groupName("LK") // 配置分组
                 .apiInfo(apiInfo())
                 .enable(b)
                 .select() // 通过.select()方法，去配置扫描接口, RequestHandlerSelectors 配置如何扫描接口
@@ -46,7 +46,7 @@ public class SwaggerConfig {
                 contact, // 联系人信息
                 "Apach 2.0 许可", // 许可
                 "许可链接", // 许可连接
-                new ArrayList<>()// 扩展
+                new ArrayList<>() // 扩展
         );
     }
 }

@@ -38,7 +38,7 @@ public class EmployeeController {
 
     @GetMapping("emp")
     public String toAddPage(Model model) {
-        //查出所有部门的信息
+        // 查出所有部门的信息
         Collection<Department> department = departmentDao.getDepartment();
         model.addAttribute("departments",department);
         return "emp/add";
@@ -68,7 +68,6 @@ public class EmployeeController {
         employeeDao.save(employee);
         return "redirect:/emps";
     }
-
 
     // 删除员工
     @GetMapping("/delemp/{id}")

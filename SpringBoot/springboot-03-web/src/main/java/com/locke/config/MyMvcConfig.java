@@ -20,6 +20,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor())
                 .addPathPatterns("/**")
+                // 过滤静态资源，否则页面渲染效果会消失
                 .excludePathPatterns("/index.html","/","/user/login","/css/**","/js/**","/img/**");
     }
 

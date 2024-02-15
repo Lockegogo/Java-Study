@@ -25,7 +25,7 @@ public class EmployeeDao {
     }
 
     static {
-        employees = new HashMap<Integer, Employee>();//创建一个员工表
+        employees = new HashMap<Integer, Employee>(); // 创建一个员工表
 
         employees.put(1001, new Employee(1001, "AA", "A123456@qq.com", 1, new Department(101, "教学部")));
         employees.put(1002, new Employee(1002, "BB", "B123456@qq.com", 0, new Department(102, "市场部")));

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-//@MapperScan("com.locke.mapper")
+// @MapperScan("com.locke.mapper")
 public class Springboot04DataApplication {
 
     public static void main(String[] args) {

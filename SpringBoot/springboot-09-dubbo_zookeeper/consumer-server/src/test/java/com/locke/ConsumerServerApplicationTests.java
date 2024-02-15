@@ -13,9 +13,6 @@ class ConsumerServerApplicationTests {
 
     @Test
     public void contextLoads() {
-
         userService.bugTicket();
-
     }
-
 }

@@ -16,6 +16,7 @@
     <description>springboot-06-shiro</description>
     <modules>
         <module>hello-shiro</module>
+        <module>spring-shiro</module>
     </modules>
     <properties>
         <java.version>19</java.version>

@@ -13,11 +13,11 @@ import java.util.Map;
 public class ShiroConfig {
     // 第三步：ShiroFilterFactoryBean
     @Bean
-    public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("SecurityManager") DefaultWebSecurityManager securityManager) {
+    public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("securityManager") DefaultWebSecurityManager securityManager) {
         ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
         // 设置安全管理器
         bean.setSecurityManager(securityManager);
-        //添加 Shiro 的内置过滤器=======================
+        // 添加 Shiro 的内置过滤器=======================
         /*
             anon : 无需认证，就可以访问
             authc : 必须认证，才能访问
@@ -41,7 +41,7 @@ public class ShiroConfig {
     // @Qualifier("userRealm") 指定 Bean 的名字为 userRealm
     // spring 默认的 BeanName 就是方法名
     // name 属性指定 BeanName
-    @Bean(name = "SecurityManager")
+    @Bean(name = "securityManager")
     public DefaultWebSecurityManager getDefaultWebSecurity(@Qualifier("userRealm") UserRealm userRealm){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 需要关联自定义的 Realm，通过参数把 Realm 对象传递过来
