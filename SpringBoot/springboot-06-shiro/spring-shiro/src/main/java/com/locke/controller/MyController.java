@@ -49,12 +49,12 @@ public class MyController {
         } catch (UnknownAccountException uae) {
             // 如果用户名不存在
             System.out.println("用户名不存在");
-            model.addAttribute("exception", "用户名不存在");
+            model.addAttribute("msg", "用户名不存在");
             return "login";
         } catch (IncorrectCredentialsException ice) {
             // 如果密码错误
             System.out.println("密码错误");
-            model.addAttribute("exception", "密码错误");
+            model.addAttribute("msg", "密码错误");
             return "login";
         }
     }
