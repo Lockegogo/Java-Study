@@ -14,9 +14,9 @@ public class ShiroConfig {
     // 第三步：ShiroFilterFactoryBean
     @Bean(name = "shiroFilterFactoryBean")
     public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("securityManager") DefaultWebSecurityManager securityManager) {
-        ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
+        ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 设置安全管理器
-        bean.setSecurityManager(securityManager);
+        shiroFilterFactoryBean.setSecurityManager(securityManager);
         // 添加 Shiro 的内置过滤器=======================
         /*
             anon : 无需认证，就可以访问
@@ -30,11 +30,11 @@ public class ShiroConfig {
         // map.put("/user/addUser","authc");
         // map.put("/user/deleteUser","authc");
         // 设置 /user/ 下面的所有请求,只有认证过才能访问
-        map.put("/user/*","authc");
-        bean.setFilterChainDefinitionMap(map);
+        map.put("/user/*", "authc");
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         // 设置登录的请求
-        bean.setLoginUrl("/tologin");
-        return bean;
+        shiroFilterFactoryBean.setLoginUrl("/tologin");
+        return shiroFilterFactoryBean;
     }
 
     // 第二步：securityManager -> DefaultWebSecurityManager
@@ -42,7 +42,7 @@ public class ShiroConfig {
     // spring 默认的 BeanName 就是方法名
     // name 属性指定 BeanName
     @Bean(name = "securityManager")
-    public DefaultWebSecurityManager getDefaultWebSecurity(@Qualifier("userRealm") UserRealm userRealm){
+    public DefaultWebSecurityManager getDefaultWebSecurity(@Qualifier("userRealm") UserRealm userRealm) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 需要关联自定义的 Realm，通过参数把 Realm 对象传递过来
         securityManager.setRealm(userRealm);
@@ -52,7 +52,7 @@ public class ShiroConfig {
     // 第一步：创建 realm 对象，需要自定义类
     // 让 spring 托管自定义的 realm 类
     @Bean
-    public UserRealm userRealm(){
+    public UserRealm userRealm() {
         return new UserRealm();
     }
 }
