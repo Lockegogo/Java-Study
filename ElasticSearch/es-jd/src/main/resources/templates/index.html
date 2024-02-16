@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8"/>
-        <title>狂神说Java-ES仿京东实战</title>
+        <title>狂神说 Java-ES 仿京东实战</title>
         <link rel="stylesheet" th:href="@{/css/style.css}"/>
     </head>
 
@@ -132,10 +132,11 @@
                 },
                 methods: {
                     searchKey() {
+                        // 从页面输入接收搜索关键字
                         let keyword = this.keyword;
-                        // 对接后端接口
+                        // 调用后端接口，返回数据，并绑定数据
                         axios.get("search/" + keyword + "/1/10").then(response => {
-                            this.results = response.data; // 绑定数据
+                            this.results = response.data;
                         })
                     }
                 }
