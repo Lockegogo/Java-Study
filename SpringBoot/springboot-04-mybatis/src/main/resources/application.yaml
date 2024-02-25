@@ -5,6 +5,55 @@ spring:
     # ?serverTimezone=UTC 解决时区的报错
     url: jdbc:mysql://localhost:3306/mybatis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    # druid 数据源专有配置
+    druid:
+      # 初始化时建立物理连接的个数
+      initial-size: 5
+      # 连接池的最小空闲数
+      min-idle: 5
+      # 连接池最大连接数
+      max-active: 20
+      # 获取连接时最大等待时间，单位毫秒
+      max-wait: 60000
+      # 既作为检测的间隔时间又作为 test-while-idle 执行的依据
+      time-between-eviction-runs-millis: 60000
+      # 连接保持空闲而不被驱逐的最小时间
+      min-evictable-idle-time-millis: 300000
+      # 用来检测连接是否有效的 sql，要求是一个查询语句
+      validation-query: SELECT 1 FROM DUAL
+      # 申请连接时执行 validationQuery 检测连接是否有效，开启会降低性能
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+
+      # 配置监控统计拦截的filters，stat:监控统计、slf4j：日志记录、wall：防御 sql 注入
+      filters: stat,wall,slf4j
+      Max-pool-prepared-statement-per-connection-size: 20
+      use-global-data-source-stat: true
+      connect-properties:
+        druid.stat.mergeSql: true
+        druid.stat.slowSqlMillis: 500
+
+      # StatViewServlet 配置：启用内置的监控页面
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: 123
+        allow: 127.0.0.1  # 为空或者为 null 时，表示允许所有访问
+        deny: 192.168.1.20  # 拒绝此 ip 访问
+        reset-enable: false
+
+      # WebStatFilter 配置
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,/jdbc/*'
+        session-stat-enable: true
+
 
 
 # 整合 mybatis
