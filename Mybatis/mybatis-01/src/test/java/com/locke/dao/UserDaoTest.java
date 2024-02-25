@@ -1,7 +1,7 @@
 package com.locke.dao;
 
 import com.locke.pojo.User;
-import com.locke.utils.MybatisUtils;
+import com.locke.util.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
